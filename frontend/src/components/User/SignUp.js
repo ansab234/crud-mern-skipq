@@ -26,10 +26,10 @@ const Signup = () => {
 
   const history = useNavigate();
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("token"));
-  //   if (user) history("/urls");
-  // }, [history]);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("token"));
+    if (user) history("/urls");
+  }, [history]);
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -54,13 +54,13 @@ const Signup = () => {
     // const userinfo = JSON.parse(localStorage.getItem("token"));
 
     try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          // "Authorization": `Bearer ${userinfo.token}`,
+      // const config = {
+      //   headers: {
+      //     "Content-type": "application/json",
+      //     // "Authorization": `Bearer ${userinfo.token}`,
 
-        },
-      };
+      //   },
+      // };
       const { data } = await axios.post(
         `${BaseUrl}register`,
         {
@@ -68,7 +68,7 @@ const Signup = () => {
           email,
           password,
         },
-        config
+        // config
       );
       console.log(data);
 

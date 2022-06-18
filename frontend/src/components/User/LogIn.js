@@ -26,10 +26,10 @@ const Login = ({ handleChange }) => {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("token"));
-  //   if (user) history("/urls");
-  // }, [history]);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("token"));
+    if (user) history("/urls");
+  }, [history]);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -50,20 +50,20 @@ const Login = ({ handleChange }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const userinfo = JSON.parse(localStorage.getItem("token"));
+    // const userinfo = JSON.parse(localStorage.getItem("token"));
 
     try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          // "Authorization": `Bearer ${userinfo.token}`,
-        },
-      };
+      // const config = {
+      //   headers: {
+      //     "Content-type": "application/json",
+      //     // "Authorization": `Bearer ${userinfo.token}`,
+      //   },
+      // };
 
       const { data } = await axios.post(
         `${BaseUrl}login`,
         { email, password },
-        config
+        // config
       );
       console.log(JSON.stringify(data));
 
