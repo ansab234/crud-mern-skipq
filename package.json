@@ -5,10 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"  },
-    "engines": {
-      "node": "8.9.2"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
+  "engines": {
+    "node": "8.9.2"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
