@@ -16,10 +16,10 @@ const SignInOutContainer = () => {
 
   const history = useNavigate();
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("token"));
-    if (!user) history("/");
-  }, [history]);
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("token"));
+  //   if (!user) history("/");
+  // }, [history]);
 
   const paperStyle = { width: 340, margin: "20px auto" };
   function TabPanel(props) {

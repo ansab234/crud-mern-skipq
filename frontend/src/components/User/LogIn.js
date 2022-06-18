@@ -26,10 +26,10 @@ const Login = ({ handleChange }) => {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("token"));
-    if (user) history("/urls");
-  }, [history]);
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("token"));
+  //   if (user) history("/urls");
+  // }, [history]);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {

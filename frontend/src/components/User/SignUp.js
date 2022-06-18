@@ -26,10 +26,10 @@ const Signup = () => {
 
   const history = useNavigate();
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("token"));
-    if (user) history("/urls");
-  }, [history]);
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("token"));
+  //   if (user) history("/urls");
+  // }, [history]);
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
