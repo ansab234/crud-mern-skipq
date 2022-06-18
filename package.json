@@ -5,8 +5,10 @@
   "main": "server.js",
  
   "scripts": {
-    "start": "node backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node backend/server.js"
+  },
+  "engines": {
+    "node": "14.17.4"
   },
   
   "keywords": [],
